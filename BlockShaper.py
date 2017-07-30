@@ -88,7 +88,8 @@ def gen_all_blocks(inp):
     if not hasattr(inp, 'savepath'):
         inp["savepath"] = "output"
 
-    # TODO: Check if dir exists!
+    if not os.path.exists(inp["savepath"]):
+        os.makedirs(inp["savepath"])
 
     if not hasattr(inp, 'extension'):
         inp["extension"] = "png"
